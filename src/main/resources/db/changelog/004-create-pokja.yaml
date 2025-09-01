@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: pusbin-generator
+      changes:
+        - createTable:
+            tableName: pokja
+            columns:
+              - column:
+                  name: id_pokja
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nama_pokja
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false

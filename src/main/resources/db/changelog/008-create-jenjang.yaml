@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8
+      author: pusbin-generator
+      changes:
+        - createTable:
+            tableName: jenjang
+            columns:
+              - column:
+                  name: id_jenjang
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: jenjang
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false

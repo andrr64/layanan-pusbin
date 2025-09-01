@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: 9
+      author: pusbin-generator
+      changes:
+        - createTable:
+            tableName: jabatan
+            columns:
+              - column:
+                  name: id_jabatan
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: id_nama_jabatan
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_jenjang
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: jabatan
+            baseColumnNames: id_nama_jabatan
+            constraintName: fk__id_nama_jabatan
+            referencedTableName: nama_jabatan
+            referencedColumnNames: id_nama_jabatan
+        - addForeignKeyConstraint:
+            baseTableName: jabatan
+            baseColumnNames: id_jenjang
+            constraintName: fk__id_jenjang
+            referencedTableName: jenjang
+            referencedColumnNames: id_jenjang

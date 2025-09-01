@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 7
+      author: pusbin-generator
+      changes:
+        - createTable:
+            tableName: nama_jabatan
+            columns:
+              - column:
+                  name: id_nama_jabatan
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nama_jabatan
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_nomenklatur
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: nama_jabatan
+            baseColumnNames: id_nomenklatur
+            constraintName: fk__id_nomenklatur
+            referencedTableName: nomenklatur
+            referencedColumnNames: id_nomenklatur

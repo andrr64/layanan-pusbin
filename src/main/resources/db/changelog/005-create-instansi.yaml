@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: pusbin-generator
+      changes:
+        - createTable:
+            tableName: instansi
+            columns:
+              - column:
+                  name: id_instansi
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nama_instansi
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_kategori_instansi
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_jenis_instansi
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_wilayah_kerja
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_pokja
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: instansi
+            baseColumnNames: id_kategori_instansi
+            constraintName: fk__id_kategori_instansi
+            referencedTableName: kategori_instansi
+            referencedColumnNames: id_kategori_instansi
+        - addForeignKeyConstraint:
+            baseTableName: instansi
+            baseColumnNames: id_jenis_instansi
+            constraintName: fk__id_jenis_instansi
+            referencedTableName: jenis_instansi
+            referencedColumnNames: id_jenis_instansi
+        - addForeignKeyConstraint:
+            baseTableName: instansi
+            baseColumnNames: id_wilayah_kerja
+            constraintName: fk__id_wilayah_kerja
+            referencedTableName: wilayah_kerja
+            referencedColumnNames: id_wilayah
+        - addForeignKeyConstraint:
+            baseTableName: instansi
+            baseColumnNames: id_pokja
+            constraintName: fk__id_pokja
+            referencedTableName: pokja
+            referencedColumnNames: id_pokja

@@ -1,0 +1,98 @@
+@startuml pusbin
+!theme plain
+
+entity data_agregat {
+    * id : int <<PK>>
+    --
+    id_instansi : int <<FK>>
+    id_jabatan : int <<FK>>
+    id_jenis_asn : int <<FK>>
+}
+
+entity instansi {
+    * id_instansi : int <<PK>>
+    --
+    nama_instansi : varchar
+    id_kategori_instansi : int <<FK>>
+    id_jenis_instansi : int <<FK>>
+    id_wilayah_kerja : int <<FK>>
+    id_pokja : int <<FK>>
+}
+
+entity kategori_instansi {
+    * id_kategori_instansi : int <<PK>>
+    --
+    kategori_instansi : varchar
+}
+
+entity jenis_instansi {
+    * id_jenis_instansi : int <<PK>>
+    --
+    jenis_instansi : varchar
+}
+
+entity pokja {
+    * id_pokja : int <<PK>>
+    --
+    nama_pokja : varchar
+}
+
+entity wilayah_kerja {
+    * id_wilayah : int <<PK>>
+    --
+    nama_wilayah : varchar
+}
+
+' =======================================
+' Jabatan dipisah jadi dua tabel referensi
+' Nomenklatur pindah ke nama_jabatan
+' =======================================
+entity jabatan {
+    * id_jabatan : int <<PK>>
+    --
+    id_nama_jabatan : int <<FK>>
+    id_jenjang : int <<FK>>
+}
+
+entity nama_jabatan {
+    * id_nama_jabatan : int <<PK>>
+    --
+    nama_jabatan : varchar
+    id_nomenklatur : int <<FK>>
+}
+
+entity jenjang {
+    * id_jenjang : int <<PK>>
+    --
+    jenjang : varchar
+}
+
+entity nomenklatur {
+    * id_nomenklatur : int <<PK>>
+    --
+    nama_nomenklatur : varchar
+}
+
+' =======================================
+entity asn {
+    * id_asn : int <<PK>>
+    --
+    jenis_asn : varchar
+}
+
+' =======================
+' RELATIONSHIP
+' =======================
+data_agregat::id_instansi }o--|| instansi::id_instansi
+data_agregat::id_jabatan }o--|| jabatan::id_jabatan
+data_agregat::id_jenis_asn }o--|| asn::id_asn
+
+instansi::id_kategori_instansi }o--|| kategori_instansi::id_kategori_instansi
+instansi::id_jenis_instansi }o--|| jenis_instansi::id_jenis_instansi
+instansi::id_wilayah_kerja }o--|| wilayah_kerja::id_wilayah
+instansi::id_pokja }o--|| pokja::id_pokja
+
+jabatan::id_nama_jabatan }o--|| nama_jabatan::id_nama_jabatan
+jabatan::id_jenjang }o--|| jenjang::id_jenjang
+nama_jabatan::id_nomenklatur }o--|| nomenklatur::id_nomenklatur
+@enduml

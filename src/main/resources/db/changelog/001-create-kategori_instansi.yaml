@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: pusbin-generator
+      changes:
+        - createTable:
+            tableName: kategori_instansi
+            columns:
+              - column:
+                  name: id_kategori_instansi
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: kategori_instansi
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
