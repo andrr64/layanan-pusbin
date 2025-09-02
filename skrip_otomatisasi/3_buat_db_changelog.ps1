@@ -90,15 +90,26 @@ foreach ($table in $sortedTables) {
     $cols = @()
     foreach ($col in $table.Columns) {
         $type = switch ($col.Type.ToLower()) {
-            "int" { "BIGINT" }
+            "int" {
+                if ($col.PrimaryKey) { "SERIAL" } else { "INT" }
+            }
+            "bigint" {
+                if ($col.PrimaryKey) { "BIGSERIAL" } else { "BIGINT" }
+            }
             "varchar" { "VARCHAR(255)" }
             default { $col.Type.ToUpper() }
         }
+
         $line = "    $($col.Name) $type"
-        if ($col.PrimaryKey) { $line += " PRIMARY KEY" }
-        if (-not $col.PrimaryKey -and $type -like "VARCHAR%") { $line += " NOT NULL" }
+        if ($col.PrimaryKey) {
+            $line += " PRIMARY KEY"
+        }
+        elseif ($type -like "VARCHAR%") {
+            $line += " NOT NULL"
+        }
         $cols += $line
     }
+
     $sql += ($cols -join ",`n")
     $sql += "`n);`n"
 

@@ -8,6 +8,8 @@ import com.pusbin.layanan.pokja.Pokja;
 import com.pusbin.layanan.pokja.PokjaRepository;
 import com.pusbin.layanan.pokja.PokjaService;
 
+import liquibase.database.Database;
+
 @Service
 public class PokjaServiceImpl implements PokjaService {
 
@@ -28,8 +30,10 @@ public class PokjaServiceImpl implements PokjaService {
     }
 
     @Override
-    public Pokja create(Pokja entity) {
-        return repository.save(entity);
+    public Pokja create(String namaPokja) {
+        Pokja dataBaru = new Pokja();
+        dataBaru.setNamaPokja(namaPokja);
+        return repository.save(dataBaru);
     }
 
     @Override

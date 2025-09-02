@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pusbin.layanan.pokja.dto.RequestTambahPokja;
+
 @RestController
 @RequestMapping("/api/v1/pokja")
 public class PokjaController {
@@ -32,8 +34,8 @@ public class PokjaController {
     }
 
     @PostMapping
-    public Pokja create(@RequestBody Pokja entity) {
-        return service.create(entity);
+    public Pokja create(@RequestBody RequestTambahPokja body) {
+        return service.create(body.getNamaPokja());
     }
 
     @PutMapping("/{id}")

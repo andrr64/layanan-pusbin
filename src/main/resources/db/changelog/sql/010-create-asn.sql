@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS asn (
-    id_asn BIGINT PRIMARY KEY,
+    id_asn SERIAL PRIMARY KEY,
     jenis_asn VARCHAR(255)
 );
 

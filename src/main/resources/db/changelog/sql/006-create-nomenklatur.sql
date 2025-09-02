@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS nomenklatur (
-    id_nomenklatur BIGINT PRIMARY KEY,
+    id_nomenklatur SERIAL PRIMARY KEY,
     nama_nomenklatur VARCHAR(255)
 );
 
