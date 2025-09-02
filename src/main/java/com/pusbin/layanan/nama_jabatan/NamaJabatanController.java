@@ -1,6 +1,10 @@
 package com.pusbin.layanan.nama_jabatan;
 
+import com.pusbin.layanan.nama_jabatan.dto.RequestTambahNamaJabatan;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -13,14 +17,13 @@ public class NamaJabatanController {
     }
 
     @GetMapping
-    public List<NamaJabatan> getAll() {
-        // implementasi nanti di ServiceImpl
-        return null;
+    public ResponseEntity<List<NamaJabatan>> getAll() {
+        return ResponseEntity.ok(service.getAll());
     }
 
     @PostMapping
-    public NamaJabatan create(@RequestBody NamaJabatan entity) {
-        // implementasi nanti di ServiceImpl
-        return null;
+    public ResponseEntity<NamaJabatan> create(
+            @Valid @RequestBody RequestTambahNamaJabatan request) {
+        return ResponseEntity.ok(service.create(request));
     }
 }

@@ -8,8 +8,6 @@ import com.pusbin.layanan.pokja.Pokja;
 import com.pusbin.layanan.pokja.PokjaRepository;
 import com.pusbin.layanan.pokja.PokjaService;
 
-import liquibase.database.Database;
-
 @Service
 public class PokjaServiceImpl implements PokjaService {
 
