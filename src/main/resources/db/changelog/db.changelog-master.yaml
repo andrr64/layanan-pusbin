@@ -7,3 +7,5 @@ databaseChangeLog:
       file: db/changelog/002-seeder-data.yaml
   - include:
       file: db/changelog/003-seed-data-instansi.yaml
+  - include:
+      file: db/changelog/004-seed-data-jabatan.yaml

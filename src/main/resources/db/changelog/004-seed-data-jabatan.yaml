@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-seed-data-jabatan
+      author: Andreas
+      changes:
+        - loadData:
+            file: db/data/nomenlaktur.csv
+            tableName: nomenklatur
+            separator: ","
+            encoding: UTF-8
+        - loadData:
+            file: db/data/nama_jabatan.csv
+            tableName: nama_jabatan
+            separator: ","
+            encoding: UTF-8
+        - loadData:
+            file: db/data/jenjang.csv
+            tableName: jenjang
+            separator: ","
+            encoding: UTF-8
+        - loadData:
+            file: db/data/jabatan.csv
+            tableName: jabatan
+            separator: ","
+            encoding: UTF-8
