@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-seed-data-instansi
+      author: Andreas
+      changes:
+        - loadData:
+            file: db/data/instansi.csv
+            tableName: instansi
+            separator: ","
+            encoding: UTF-8
