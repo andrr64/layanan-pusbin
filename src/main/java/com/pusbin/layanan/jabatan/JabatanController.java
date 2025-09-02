@@ -1,10 +1,15 @@
 package com.pusbin.layanan.jabatan;
 
-import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.pusbin.layanan.jabatan.dto.ResponseGetJabatan;
+
 @RestController
-@RequestMapping("/jabatan")
+@RequestMapping("/api/v1/jabatan")
 public class JabatanController {
     private final JabatanService service;
 
@@ -13,14 +18,7 @@ public class JabatanController {
     }
 
     @GetMapping
-    public List<Jabatan> getAll() {
-        // implementasi nanti di ServiceImpl
-        return null;
-    }
-
-    @PostMapping
-    public Jabatan create(@RequestBody Jabatan entity) {
-        // implementasi nanti di ServiceImpl
-        return null;
+    public List<ResponseGetJabatan> getAllJabatan(){
+        return service.getAll();
     }
 }

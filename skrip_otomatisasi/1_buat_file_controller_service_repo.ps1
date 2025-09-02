@@ -50,7 +50,7 @@ import jakarta.persistence.*;
 @Table(name = "$entity")
 public class $className {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 }
 "@

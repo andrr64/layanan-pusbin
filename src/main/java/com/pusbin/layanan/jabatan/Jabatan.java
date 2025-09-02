@@ -19,14 +19,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Jabatan {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idJabatan;
 
     @ManyToOne
     @JoinColumn(name = "id_nama_jabatan", nullable = false)
-    private NamaJabatan namaJabatan;
+    private NamaJabatan dataJabatan;
 
     @ManyToOne
     @JoinColumn(name = "id_jenjang", nullable = false)
-    private Jenjang jenjang;
+    private Jenjang dataJenjang;
 }

@@ -1,5 +1,5 @@
-id_jabatan,nama_jabatan,id_nomenklatur
-1,Manajer,1
-2,Asisten Manajer,1
-3,Staf Senior,2
-4,Staf Junior,2
+nama_jabatan,id_nomenklatur
+Manajer,1
+Asisten Manajer,1
+Staf Senior,2
+Staf Junior,2

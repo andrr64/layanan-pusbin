@@ -1,6 +1,6 @@
-id_jenis_instansi,jenis_instansi
-1,Kementerian
-2,Lembaga
-3,Dinas
-4,RSUD
-5,Sekolah
+jenis_instansi
+Kementerian
+Lembaga
+Dinas
+RSUD
+Sekolah
