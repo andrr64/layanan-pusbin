@@ -1,5 +1,5 @@
-id_nama_jabatan,id_jenjang
-1,1
-2,2
-3,3
-4,4
+id_jabatan,id_nama_jabatan,id_jenjang
+1,1,1
+2,2,2
+3,3,3
+4,4,4

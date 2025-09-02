@@ -1,11 +1,11 @@
-nama_instansi,id_kategori_instansi,id_jenis_instansi,id_wilayah_kerja,id_pokja
-Instansi Pendidikan,1,2,1,1
-Instansi Kesehatan,2,1,2,2
-Instansi Pemerintahan,3,1,3,1
-Instansi Perhubungan,4,2,1,3
-Instansi Keuangan,2,1,2,2
-Instansi Telekomunikasi,3,2,3,1
-Instansi Energi,4,1,1,3
-Instansi Lingkungan,1,2,2,2
-Instansi Pariwisata,2,1,3,1
-Instansi Pertanian,3,2,1,3
+id_instansi,nama_instansi,id_kategori_instansi,id_jenis_instansi,id_wilayah_kerja,id_pokja
+1,Instansi Pendidikan,1,2,1,1
+2,Instansi Kesehatan,2,1,2,2
+3,Instansi Pemerintahan,3,1,3,1
+4,Instansi Perhubungan,4,2,1,3
+5,Instansi Keuangan,2,1,2,2
+6,Instansi Telekomunikasi,3,2,3,1
+7,Instansi Energi,4,1,1,3
+8,Instansi Lingkungan,1,2,2,2
+9,Instansi Pariwisata,2,1,3,1
+10,Instansi Pertanian,3,2,1,3
