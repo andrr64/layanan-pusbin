@@ -2,6 +2,6 @@ databaseChangeLog:
     # tabel parent 
   - includeAll:
       id: 001-init-table
-      path: db/changelog/sql
+      path: db/changelog/001-init-table-sql
   - include:
       file: db/changelog/002-seeder-data.yaml
