@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-seeder-data
+      author: Andreas
+      changes:
+        - loadData:
+            file: db/data/jenis_instansi.csv
+            tableName: jenis_instansi
+            separator: ","
+            encoding: UTF-8
+        - loadData:
+            file: db/data/kategori_instansi.csv
+            tableName: kategori_instansi
+            separator: ","
+            encoding: UTF-8
+        - loadData:
+            file: db/data/pokja.csv
+            tableName: pokja
+            separator: ","
+            encoding: UTF-8
+        - loadData:
+            file: db/data/wilayah_kerja.csv
+            tableName: wilayah_kerja
+            separator: ","
+            encoding: UTF-8

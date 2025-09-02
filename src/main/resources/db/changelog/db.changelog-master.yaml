@@ -1,26 +1,7 @@
 databaseChangeLog:
     # tabel parent 
+  - includeAll:
+      id: 001-init-table
+      path: db/changelog/sql
   - include:
-      file: db/changelog/001-create-kategori_instansi.yaml
-  - include:
-      file: db/changelog/002-create-jenis_instansi.yaml
-  - include:
-      file: db/changelog/003-create-wilayah_kerja.yaml
-  - include:
-      file: db/changelog/004-create-pokja.yaml
-
-    # tabel child
-  - include:
-      file: db/changelog/005-create-instansi.yaml
-  - include:
-      file: db/changelog/006-create-nomenklatur.yaml
-  - include:
-      file: db/changelog/007-create-nama_jabatan.yaml
-  - include:
-      file: db/changelog/008-create-jenjang.yaml
-  - include:
-      file: db/changelog/009-create-jabatan.yaml
-  - include:
-      file: db/changelog/010-create-asn.yaml
-  - include:
-      file: db/changelog/011-create-data_agregat.yaml
+      file: db/changelog/002-seeder-data.yaml
