@@ -1,11 +1,11 @@
 databaseChangeLog:
     # tabel parent 
-  - includeAll:
-      id: 001-init-table
-      path: db/changelog/sql
-  - include:
-      file: db/changelog/002-seeder-data.yaml
-  - include:
-      file: db/changelog/003-seed-data-instansi.yaml
-  - include:
-      file: db/changelog/004-seed-data-jabatan.yaml
+#   - includeAll:
+#       id: 001-init-table
+#       path: db/changelog/sql
+#   - include:
+#       file: db/changelog/002-seeder-data.yaml
+#   - include:
+#       file: db/changelog/003-seed-data-instansi.yaml
+#   - include:
+#       file: db/changelog/004-seed-data-jabatan.yaml

@@ -34,4 +34,6 @@ public class DataAgregat {
     @ManyToOne
     @JoinColumn(name = "id_jenis_asn", nullable = false)
     private Asn asn;
+
+    private Long jumlah;
 }

@@ -1,11 +1,17 @@
 package com.pusbin.layanan.data_agregat;
 
-import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.pusbin.layanan.data_agregat.dto.ResponseGetDataAgregat;
+
 @RestController
-@RequestMapping("/data_agregat")
+@RequestMapping("/api/v1/data-agregat")
 public class DataAgregatController {
+
     private final DataAgregatService service;
 
     public DataAgregatController(DataAgregatService service) {
@@ -13,14 +19,7 @@ public class DataAgregatController {
     }
 
     @GetMapping
-    public List<DataAgregat> getAll() {
-        // implementasi nanti di ServiceImpl
-        return null;
-    }
-
-    @PostMapping
-    public DataAgregat create(@RequestBody DataAgregat entity) {
-        // implementasi nanti di ServiceImpl
-        return null;
+    public List<ResponseGetDataAgregat> getAll() {
+        return service.getAll();
     }
 }
