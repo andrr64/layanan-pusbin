@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005-seed-data-asn
+      author: Andreas
+      changes:
+        - loadData:
+            file: db/data/asn.csv
+            tableName: asn
+            separator: ","
+            encoding: UTF-8

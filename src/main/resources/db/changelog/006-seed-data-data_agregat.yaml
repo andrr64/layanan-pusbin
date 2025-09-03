@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 006-seed-data-agregat
+      author: Andreas
+      changes:
+        - loadData:
+            file: db/data/data_agregat.csv
+            tableName: data_agregat
+            separator: ","
+            encoding: UTF-8
