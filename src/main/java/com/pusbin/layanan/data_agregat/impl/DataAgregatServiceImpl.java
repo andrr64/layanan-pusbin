@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.pusbin.layanan.data_agregat.DataAgregat;
 import com.pusbin.layanan.data_agregat.DataAgregatRepository;
 import com.pusbin.layanan.data_agregat.DataAgregatService;
+import com.pusbin.layanan.data_agregat.DataAgregatSpecification;
 import com.pusbin.layanan.data_agregat.dto.ResponseGetDataAgregat;
 
 @Service
@@ -22,8 +24,18 @@ public class DataAgregatServiceImpl implements DataAgregatService {
     }
 
     @Override
-    public List<ResponseGetDataAgregat> getAll() {
-        List<DataAgregat> listDataRaw = repository.findAll();
+    public List<ResponseGetDataAgregat> getAll(Long idInstansi, Long idPokja) {
+        Specification<DataAgregat> spec = (root, query, cb) -> cb.conjunction();
+
+        if (idInstansi != null) {
+            spec = spec.and(DataAgregatSpecification.hasInstansi(idInstansi));
+        }
+
+        if (idPokja != null){
+            spec = spec.and(DataAgregatSpecification.hasPokja(idPokja));
+        }
+        
+        List<DataAgregat> listDataRaw = repository.findAll(spec);
         List<ResponseGetDataAgregat> listDataAgregat = new ArrayList<>();
 
         for (DataAgregat data : listDataRaw) {
